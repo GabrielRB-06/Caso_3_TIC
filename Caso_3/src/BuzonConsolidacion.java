@@ -9,16 +9,28 @@ public class BuzonConsolidacion {
         this.capacidad = capacidad;
     }
 
-    public synchronized void depositar(Evento e) throws InterruptedException {
-        while (lista.size() == capacidad) wait();
-        lista.add(e);
-        notifyAll();
+    public synchronized void depositar(Evento evento) {
+        while (lista.size() == capacidad) {
+            try{
+                wait();
+            } catch (Exception e){
+                Thread.currentThread().interrupt();
+            }
+        }
+        lista.add(evento);
+        notify();
     }
 
     public synchronized Evento retirar() throws InterruptedException {
-        while (lista.isEmpty()) wait();
+        while (lista.isEmpty()) {
+            try {
+                wait();
+            } catch (Exception e){
+                Thread.currentThread().interrupt();
+            }
+        }
         Evento e = lista.remove(0);
-        notifyAll();
+        notify();
         return e;
     }
 }

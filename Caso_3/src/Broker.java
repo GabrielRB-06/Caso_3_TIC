@@ -3,11 +3,11 @@ import java.util.Random;
 public class Broker extends Thread{
     private final Random ran = new Random();
     private final int totalEventos;
-    private final BuzonIlimitado buzonEntrada;
-    private final BuzonIlimitado buzonAlertas;
+    private final BuzonEntrada buzonEntrada;
+    private final BuzonAlertas buzonAlertas;
     private final BuzonClasificacion buzonClasificacion;
 
-    public Broker(int totalEventos, BuzonIlimitado buzonEntrada, BuzonIlimitado buzonAlertas, BuzonClasificacion buzonClasificacion){
+    public Broker(int totalEventos, BuzonEntrada buzonEntrada, BuzonAlertas buzonAlertas, BuzonClasificacion buzonClasificacion){
         this.totalEventos = totalEventos;
         this.buzonEntrada = buzonEntrada;
         this.buzonAlertas = buzonAlertas;

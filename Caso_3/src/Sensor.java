@@ -5,10 +5,10 @@ public class Sensor extends Thread {
     private final int id;
     private final int numEventos;
     private final int ns;
-    private final BuzonIlimitado buzonEntrada;
+    private final BuzonAlertas buzonEntrada;
     private final Random ran = new Random();
 
-    public Sensor(int id, int valorBase, int ns, BuzonIlimitado buzonEntrada){
+    public Sensor(int id, int valorBase, int ns, BuzonAlertas buzonEntrada){
         this.id = id;
         this.ns = ns;
         this.numEventos =  id*valorBase;

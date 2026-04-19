@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class BuzonIlimitado {
+public class BuzonAlertas {
     private final List<Evento> eventos = new ArrayList<>();
 
     public synchronized void depositarEvento(Evento evento){
