@@ -25,13 +25,6 @@ public class Administrador extends Thread{
                 }
             }
 
-            int num = ran.nextInt(21);
-            if ((num%4) == 0){
-                while (!buzonClasificacion.depositar(evento)){
-                    Thread.yield();
-                }
-            }
-
             if (evento.isFinal()){
                 for(int i = 0; i < numClasificadores; i++){
                     Evento eventoFin = new Evento("FIN", 0, true);
@@ -40,6 +33,13 @@ public class Administrador extends Thread{
                     }
                 }
                 cent = false;
+            } else {
+                int num = ran.nextInt(21);
+                if ((num % 4) == 0){
+                    while (!buzonClasificacion.depositar(evento)){
+                        Thread.yield();
+                    }
+                }
             }
         }
 

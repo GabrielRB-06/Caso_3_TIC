@@ -9,8 +9,9 @@ public class BuzonAlertas {
     }
 
     public synchronized Evento retirarEvento(){
-        Evento evento1 = eventos.get(0);
-        eventos.remove(0);
-        return evento1;
+        if (eventos.isEmpty()){
+            return null;
+        }
+        return eventos.remove(0);
     }
 }

@@ -29,12 +29,10 @@ public class Clasificador extends Thread{
                     } 
                 }
                 break;
+            } else {
+                int indice = evento.getSeudo() - 1;
+                buzonesConsolidacion.get(indice).depositar(evento);
             }
-
-            
         }
     }
-
-
-
 }
