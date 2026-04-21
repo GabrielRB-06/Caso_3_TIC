@@ -21,7 +21,7 @@ public class BuzonConsolidacion {
         notify();
     }
 
-    public synchronized Evento retirar() throws InterruptedException {
+    public synchronized Evento retirar() {
         while (lista.isEmpty()) {
             try {
                 wait();

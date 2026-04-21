@@ -2,17 +2,13 @@ import java.util.List;
 
 public class Clasificador extends Thread{
     private final BuzonClasificacion buzonClasificacion;
-    private final BuzonConsolidacion buzonConsolidacion;
     private final List<BuzonConsolidacion> buzonesConsolidacion;
     private final MonitorClasificadores monitor;
-    private final int numServidores;
 
-    public Clasificador(BuzonClasificacion buzonClasificacion, BuzonConsolidacion buzonConsolidacion, List<BuzonConsolidacion> buzonesConsolidacion, MonitorClasificadores monitor, int numServidores){
+    public Clasificador(BuzonClasificacion buzonClasificacion, List<BuzonConsolidacion> buzonesConsolidacion, MonitorClasificadores monitor){
         this.buzonClasificacion = buzonClasificacion;
-        this.buzonConsolidacion = buzonConsolidacion;
         this.buzonesConsolidacion = buzonesConsolidacion;
         this.monitor = monitor;
-        this.numServidores = numServidores;
     }
 
     @Override
