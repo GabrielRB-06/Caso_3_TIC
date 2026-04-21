@@ -32,7 +32,7 @@ public class App {
         }
 
         List<Sensor> sensores = new ArrayList<>();
-        for (int i = 0; i <= ni; i++){
+        for (int i = 1; i <= ni; i++){
             sensores.add(new Sensor(i, valorBase, ns, buzonEntrada));
         }
 
@@ -46,7 +46,7 @@ public class App {
         }
 
         List<Servidor> servidores = new ArrayList<>();
-        for (int i = 0; i <= ns; i++){
+        for (int i = 1; i <= ns; i++){
             servidores.add(new Servidor(i, buzonesConsolidacion.get(i - 1)));
         }
 
